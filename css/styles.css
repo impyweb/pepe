@@ -1,0 +1,388 @@
+/* ==============================
+   RESET / BASE
+============================== */
+
+/* Estilos globales */
+
+body {
+  margin: 0;
+  /* IMPORTANTE: Usar la fuente del cuerpo de texto en el body */
+  font-family: 'Playball', cursive; 
+}
+
+/* ==============================
+   TIPOGRAFÍA GLOBAL
+============================== */
+
+h1 {
+  font-size: 3rem; 
+  color: #FDF6EE;  /* Naranja Quemado (Acento) */
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Playball', cursive; 
+  text-transform: none; 
+  font-weight: 400; 
+  letter-spacing: 2px; /* Añadimos espaciado para un toque más de grafiti/impacto */
+}
+
+p {
+  font-size: 1.5rem; 
+  color: #FDF6EE;
+  line-height: 1.8; /* Aumentamos el interlineado */
+  font-family: 'Playball', cursive;
+  text-align: center; 
+  max-width: 900px;
+  margin: 0 auto 30px auto; 
+  padding: 0 40px; 
+}
+
+hr {
+  border: none;
+  height: 2px; /* Un separador más grueso */
+  background-color: #2E2E2E; /* Un gris sutil para separar */
+  margin: 40px auto; /* Centrado y con margen */
+  max-width: 800px; 
+}
+
+/* ==============================
+   HEADER (Nuevo Estilo Cálido/Oscuro)
+============================== */
+
+header {
+  background-color: #333333; /* Gris Carbón como base oscura */
+  height: 100px; /* Bajamos la altura para un diseño más moderno */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 110px; /* REDUCIDO: De 160px a 60px para no dominar la pantalla */
+}
+
+.menu a {
+  color: #FAF0E6;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 400; /* equilibrado */
+  font-size: 1.15rem;
+  font-family: 'Playball', cursive; /* 👈 Fuente del h1 */
+  transition: color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 1px; /* más carácter */
+}
+
+.menu a:hover {
+  color: #D2691E; /* Naranja acento */
+  transform: scale(1.05);
+}
+
+.home-icon {
+  width: 24px;       /* ajusta el tamaño del ícono */
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px; /* separa el ícono del texto si lo hay */
+  transition: transform 0.2s ease;
+}
+
+.home-icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* ==============================
+   MAIN (Fondo Cálido)
+============================== */
+main {
+  background-color: #2E2E2E; /* gris oscuro cálido, más elegante que negro puro */
+  min-height: 400px;
+  padding: 50px 0;
+
+  /* Textura granulada elegante */
+  background-image: 
+    radial-gradient(rgba(150, 100, 70, 0.12) 5px, transparent 5px),
+    radial-gradient(rgba(0, 0, 0, 0.08) 3px, transparent 3px),
+    radial-gradient(rgba(255, 255, 255, 0.06) 2px, transparent 2px);
+  background-size: 20px 20px, 12px 12px, 8px 8px;
+  background-position: 0 0, 3px 3px, 1px 1px;
+
+}
+
+/* ==============================
+   CARRUSEL (Estilo cálido, coherente con el sitio)
+============================== */
+
+.carrusel {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 900px;
+  margin: 60px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  background-color: #1F1F1F; /* fondo cálido oscuro */
+}
+
+.carrusel-contenedor {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+}
+
+.carrusel-item {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.carrusel-item.activo {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.carrusel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ocupa todo el espacio visualmente */
+  filter: brightness(0.95) contrast(1.05);
+  transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+}
+
+.carrusel img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05) contrast(1.1);
+}
+
+/* Botones de navegación */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #FAF0E6;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(210,105,30,0.9); /* acento naranja D2691E */
+  transform: scale(1.1);
+}
+
+.carrusel-btn.prev {
+  left: 15px;
+}
+
+.carrusel-btn.next {
+  right: 15px;
+}
+
+/* Texto descriptivo sobre la imagen */
+.carrusel-texto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background: rgba(46, 46, 46, 0.7);
+  color: #FDF6EE;
+  font-family: 'Playball', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  letter-spacing: 1px;
+  border-radius: 0 0 12px 12px;
+  backdrop-filter: blur(3px);
+}
+
+/* Adaptación responsiva */
+@media (max-width: 768px) {
+  .carrusel {
+    max-width: 95%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .carrusel-texto {
+    font-size: 1.1rem;
+    padding: 10px 0;
+  }
+
+  .carrusel-btn {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+}
+
+.imagenes_paralelas {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* espacio entre imágenes */
+  margin: 40px 0; /* espacio arriba y abajo del bloque */
+  flex-wrap: wrap; /* para que en pantallas pequeñas se adapten */
+}
+
+.imagenes_paralelas .imagen-item {
+  flex: 1 1 300px; /* cada imagen ocupa espacio proporcional, mínimo 300px */
+  max-width: 400px; /* máximo ancho por imagen */
+}
+
+.imagenes_paralelas .imagen-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* opcional, para suavizar bordes */
+  object-fit: cover;
+}
+
+/* Bloque de imágenes paralelas 1 */
+#imagenes_paralelas_1 {
+    display: flex;
+    gap: 10px; /* menos espacio entre imágenes */
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#imagenes_paralelas_1 .imagen-item img {
+    width: 300px;      /* ancho fijo para todas las imágenes */
+    height: 400px;     /* altura fija para todas las imágenes */
+    object-fit: cover; /* recorta centrado si no coincide proporción */
+    border-radius: 10px;
+}
+
+/* Bloque de imágenes paralelas 2 */
+#imagenes_paralelas_2 {
+    display: flex;
+    gap: 10px; /* menos espacio entre imágenes */
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#imagenes_paralelas_2 .imagen-item img {
+    width: 300px;      /* ancho fijo para todas las imágenes */
+    height: 400px;     /* altura fija para todas las imágenes */
+    object-fit: cover; /* recorta centrado si no coincide proporción */
+    border-radius: 10px;
+}
+
+/* ==============================
+   Íconos de contacto
+============================== */
+
+
+
+/* Lista de contacto vertical centrada */
+.contact-list {
+  list-style: none;          /* elimina viñetas */
+  padding: 0;
+  margin: 40px auto;
+  text-align: left;          /* puedes cambiar a center si quieres */
+  max-width: 300px;          /* ancho máximo de la lista */
+  font-family: 'Playball', cursive;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;    /* vertical */
+  gap: 25px;                 /* espacio entre items */
+}
+
+/* Cada elemento de la lista con ícono + texto */
+.contact-list li {
+  display: flex;             /* ícono y texto en línea */
+  align-items: center;       /* centrado vertical */
+  gap: 15px;                 /* espacio entre ícono y texto */
+}
+
+/* Estilo de los enlaces */
+.contact-list li a {
+  text-decoration: none;
+  color: #FDF6EE;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Hover del enlace */
+.contact-list li a:hover {
+  color: #D2691E; /* naranja acento */
+}
+
+/* Íconos dentro de la lista */
+.contact-list li img {
+  width: 40px;               /* tamaño del ícono */
+  height: 40px;
+  object-fit: contain;
+}
+
+.whatsapp-number {
+  font-family: 'Playball', cursive; /* fuente legible */
+  font-size: 1.5rem;
+  color: #FDF6EE;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* ==============================
+   FOOTER (Nuevo Estilo Cálido/Oscuro)
+============================== */
+
+footer {
+  background-color: #333333; /* Gris Carbón */
+  color: #FAF0E6;
+  height: 120px; /* Un poco más alto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-nav {
+  width: 90%;
+  max-width: 1200px;
+}
+.footer-links a {
+  color: #FAF0E6;
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Playball', cursive; /* 👈 misma fuente */
+  transition: color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+  color: #D2691E;
+  transform: scale(1.05);
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #A5B4FC; /* Tono lila/gris más suave para el copyright */
+  margin-top: 15px;
+  text-align: center; /* Centra el texto horizontalmente */
+}

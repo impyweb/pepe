@@ -1,0 +1,52 @@
+# ====================================
+# .gitignore para el sitio "Chef José Román"
+# ====================================
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales o de respaldo
+*.tmp
+*.bak
+*.swp
+*.log
+*.~*
+
+# Archivos de Python (no deben subirse)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+ENV/
+env/
+.venv/
+
+# Archivo ejecutor (no debe estar en el repo)
+ejecutor.py
+
+# Archivos de configuración de editores
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos de sistema Linux
+*~
+
+# Archivos de despliegue locales
+node_modules/
+dist/
+build/
+
+# Archivos ocultos que no se requieren en producción
+*.lock
+*.cache
+
+# Archivos de GitHub Pages innecesarios
+*.sass-cache
+.jekyll-cache/
+_site/
