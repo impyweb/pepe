@@ -9,8 +9,7 @@ Cada detalle del proyecto busca transmitir elegancia, profesionalismo y pasión 
 
 ## 🌐 Sitio web
 
-🔗 **URL del proyecto:** [https://tuusuario.github.io/pepe](https://tuusuario.github.io/pepe)  
-(Asegúrate de reemplazar `tuusuario` por tu nombre de usuario de GitHub cuando lo publiques).
+🔗 **URL del proyecto:** https://impyweb.github.io/pepe
 
 ---
 
@@ -97,4 +96,3 @@ pepe/
 =======
 # pepe
 Portfolio web del chef José Román
->>>>>>> f894d512c81732ee0537b23979250bf71e85b1b2
